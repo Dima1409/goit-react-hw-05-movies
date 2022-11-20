@@ -1,6 +1,6 @@
-// import { NavLink } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-export const Movies = () => {
+const Movies = () => {
     return (
         <>
         <div>Movies</div>
@@ -8,3 +8,5 @@ export const Movies = () => {
         </>
     )
 }
+
+export default Movies;
