@@ -7,7 +7,6 @@ export const Home = () => {
     const [movies, setMovies] = useState([]);
     useEffect(()=>{
         getMovieTrendDay().then(data=>{
-            console.log(data)
             setMovies(data.results);
         })
     },[]);

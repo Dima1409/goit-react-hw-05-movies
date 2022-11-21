@@ -4,7 +4,7 @@ import { Link, Outlet, useParams } from "react-router-dom";
 
 
 const MovieDetails = () => {
-    const [movie, setMovie] = useState('');
+    const [movie, setMovie] = useState([]);
     const {id} = useParams();
 
     useEffect(()=>{
@@ -19,11 +19,13 @@ const MovieDetails = () => {
     const {
         original_title,
         overview,
-        release_date,
+        release_date='',
         poster_path,
         vote_average, 
-        genre_ids
+        genres=[],
     } = movie;
+
+    let genresList = genres.map((elem)=>elem.name);
 
     return (
         <>
@@ -35,12 +37,12 @@ const MovieDetails = () => {
                 width="300"
                 height="200"
             /></div>
-        <h3>{original_title} ({release_date})</h3>
+        <h3>{original_title} ({release_date.slice(0,4)})</h3>
         <p>User Score: {Math.round(vote_average * 100 / 10)}%</p>
         <h3>Overview</h3>
         <p>{overview}</p>
         <h3>Genres</h3>
-        <p>{genre_ids}</p>
+        <p>{genresList.join(' ')}</p>
 
         <div>
             <h3>Additional information</h3>
