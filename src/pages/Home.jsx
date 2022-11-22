@@ -3,7 +3,7 @@ import { getMovieTrendDay } from "api/api";
 import { useEffect, useState } from "react";
 import MovieList from "components/MovieList/MovieList";
 
-export const Home = () => {
+const Home = () => {
     const [movies, setMovies] = useState([]);
     useEffect(()=>{
         getMovieTrendDay().then(data=>{
@@ -19,3 +19,4 @@ export const Home = () => {
     )
 }
 
+export default Home;

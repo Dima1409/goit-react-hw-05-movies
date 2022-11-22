@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getMovieById } from "api/api";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams, useLocation } from "react-router-dom";
 
 
 const MovieDetails = () => {
@@ -14,7 +14,8 @@ const MovieDetails = () => {
        }
     getById();
     }, [id]);
-
+    const location = useLocation();
+    console.log(location)
     const base_img_url = 'https://image.tmdb.org/t/p/w500';
     const {
         original_title,
@@ -26,9 +27,10 @@ const MovieDetails = () => {
     } = movie;
 
     let genresList = genres.map((elem)=>elem.name);
-
+    const backLink = location.state?.from?? '/';
     return (
         <>
+        <Link to={backLink}>Back</Link>
         <div><img
                 src={poster_path ?
                     `${base_img_url}${poster_path}`: 
