@@ -1,12 +1,15 @@
-// import { Link } from "react-router-dom";
+import Form from "components/Form/Form";
+import MovieList from "components/MovieList/MovieList";
+import { useState } from "react";
 
 const Movies = () => {
-    return (
-        <>
-        <div>Movies</div>
-        <p>This is page movies</p>
-        </>
-    )
+   const [searchMovies, setSearchMovies] = useState([]);
+   return (
+    <>
+    <Form setMovies={setSearchMovies}/>
+    {searchMovies && <MovieList movies={searchMovies}/>}
+    </>
+   )
 }
 
 export default Movies;

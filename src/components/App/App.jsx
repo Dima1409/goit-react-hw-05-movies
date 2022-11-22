@@ -10,12 +10,6 @@ import Reviews from 'components/Reviews/Reviews';
 export const App = () => {
   return (
     <>
-    {/* <Header>
-      <nav>
-        <StyledLink to={'/'}>Home</StyledLink>
-        <StyledLink to={'/movies'}>Movies</StyledLink>
-      </nav>
-    </Header> */}
     <Routes>
       <Route path='/' element={<SharedLayout/>}>
       <Route index element={<Home/>}/>
