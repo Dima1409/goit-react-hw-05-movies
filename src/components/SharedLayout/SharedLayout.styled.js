@@ -3,7 +3,12 @@ import { NavLink } from "react-router-dom";
 
 const StyledLink = styled(NavLink) `
 color: black;
-margin: 5px 10px;
+margin-right: 10px;
+font-size: 30px;
+transition: all 0.3s;
+:last-child {
+margin: 0;
+}
 
 &.active {
   color: orange;
@@ -25,10 +30,11 @@ const Header = styled.header`
     justify-content: start;
     align-items: center;
     min-height: 64px;
-    padding-right: 24px;
-    padding-left: 24px;
+    /* padding-right: 24px;
+    padding-left: 24px; */
     padding-top: 12px;
     padding-bottom: 12px;
+    margin-bottom: 20px;
     color: #fff;
     background-color: #28718d;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),

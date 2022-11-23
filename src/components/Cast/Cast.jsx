@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieCast } from "api/api";
+import { ListCast } from "./Cast.styled";
+import { Container } from "components/App/App.styled";
 
 const Cast = () => {
     const {id} = useParams();
@@ -13,24 +15,26 @@ const Cast = () => {
     }
     getMovie();
     },[id]);
-    const base_img_url = 'https://image.tmdb.org/t/p/w500';
+    const base_img_url = 'https://image.tmdb.org/t/p/w200';
     return (
-        <div>
-        <ul>
+        <Container>
+        <ListCast>
              {cast.map(({profile_path, name, character, cast_id}) => {
                 
                 return (
                     <li key={cast_id}>
-                        <img src={profile_path ? `${base_img_url}${profile_path}` : 'https://t4.ftcdn.net/jpg/04/70/29/97/240_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'} alt={name}
-                        width="240"
-                        height="320"/>
+                        <img src={profile_path ? `${base_img_url}${profile_path}` : 'http://dummyimage.com/200x300&text=no+photo'} 
+                        alt={name}
+                        width='200'
+                        height='300'
+                        />
                         <h3>{name}</h3>
                         <p>{character}</p>
                     </li>
                 )
              })}
-        </ul>
-        </div>
+        </ListCast>
+        </Container>
     )
 }
 
