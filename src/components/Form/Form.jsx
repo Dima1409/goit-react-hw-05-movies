@@ -3,10 +3,12 @@ import { useSearchParams } from "react-router-dom";
 import { searchMovieByValue } from "api/api";
 import { Container } from "components/App/App.styled";
 import { SearchForm, InputForm, BtnSubmit } from "./Form.styled";
+import PropTypes from 'prop-types';
 
 const Form = ({setMovies}) => {
     const [searchValue, setSearchValue] = useSearchParams();
     const value = searchValue.get('value') ?? '';
+  
     
     useEffect(()=>{
         if(value === '') {
@@ -38,6 +40,11 @@ const Form = ({setMovies}) => {
         </SearchForm>
         </Container>
     )
+}
+Form.propTypes = {
+   id: PropTypes.number,
+   title: PropTypes.string,
+   poster_path: PropTypes.string,
 }
 
 export default Form;

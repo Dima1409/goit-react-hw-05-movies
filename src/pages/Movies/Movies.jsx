@@ -1,5 +1,5 @@
 import Form from "components/Form/Form";
-import MovieList from "components/MovieList/MovieList";
+import MovieList from "components/MovieList";
 import { useState } from "react";
 
 const Movies = () => {

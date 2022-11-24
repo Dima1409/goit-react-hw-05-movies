@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getMovieCast } from "api/api";
 import { ListCast } from "./Cast.styled";
 import { Container } from "components/App/App.styled";
+import PropTypes from 'prop-types';
 
 const Cast = () => {
     const {id} = useParams();
@@ -37,5 +38,10 @@ const Cast = () => {
         </Container>
     )
 }
-
+Cast.propTypes = {
+    profile_path: PropTypes.string,
+    name: PropTypes.string,
+    character: PropTypes.string,
+    cast_id: PropTypes.number
+}
 export default Cast;

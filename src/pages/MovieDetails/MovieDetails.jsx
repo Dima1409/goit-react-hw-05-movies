@@ -16,7 +16,7 @@ const MovieDetails = () => {
     getById();
   }, [id]);
   const location = useLocation();
-  const base_img_url = 'https://image.tmdb.org/t/p/w500';
+  const base_img_url = 'https://image.tmdb.org/t/p/w300';
   const {
     original_title,
     overview,
@@ -40,6 +40,7 @@ const MovieDetails = () => {
                 : 'https://t4.ftcdn.net/jpg/04/70/29/97/240_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'
             }
             alt={original_title}
+            width='300'
           />
         </Poster>
         <div>
@@ -50,7 +51,7 @@ const MovieDetails = () => {
           <Heading>Overview</Heading>
           <Description>{overview}</Description>
           <Heading>Genres</Heading>
-          <Description>{genresList.join(' ')}</Description>
+          <Description>{genresList.join(', ')}</Description>
         </div>
       </Details>
 

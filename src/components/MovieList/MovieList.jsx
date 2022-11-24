@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Container } from 'components/App/App.styled';
 import { MoviesGallery, MoviesImage, MovieTitle, MovieItem } from './MovieList.styled';
+import PropTypes from 'prop-types';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
@@ -29,5 +30,15 @@ const MovieList = ({ movies }) => {
     </Container>
   );
 };
+
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      poster_path: PropTypes.string
+    })
+  )
+}
 
 export default MovieList;

@@ -1,7 +1,6 @@
-// import { NavLink } from "react-router-dom";
 import { getMovieTrendDay } from "api/api";
 import { useEffect, useState } from "react";
-import MovieList from "components/MovieList/MovieList";
+import MovieList from "components/MovieList";
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
