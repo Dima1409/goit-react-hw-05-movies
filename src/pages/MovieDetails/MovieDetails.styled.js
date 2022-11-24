@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Details = styled.div`
 margin-top: 10px;
 display: flex;
-align-items: flex-start;
+align-items: center;
 `
 
 const Poster = styled.div`

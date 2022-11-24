@@ -9,6 +9,7 @@ const SEARCH_MOVIE_URL = `${BASE_URL}/search/movie?api_key=${API_KEY}&page=1&inc
 const getMovieTrendDay = async () => {
     try {
         const {data} = await axios.get(`${TREND_DAY}`);
+        console.log(data)
         return data;
     }
     catch(error) {

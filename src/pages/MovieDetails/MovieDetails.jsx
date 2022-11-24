@@ -16,12 +16,13 @@ const MovieDetails = () => {
     getById();
   }, [id]);
   const location = useLocation();
-  const base_img_url = 'https://image.tmdb.org/t/p/w300';
+  const base_img_url = 'https://image.tmdb.org/t/p/w500';
   const {
     original_title,
     overview,
     release_date = '',
-    poster_path,
+    backdrop_path
+,
     vote_average,
     genres = [],
   } = movie;
@@ -35,12 +36,12 @@ const MovieDetails = () => {
         <Poster>
           <img
             src={
-              poster_path
-                ? `${base_img_url}${poster_path}`
+              backdrop_path
+                ? `${base_img_url}${backdrop_path}`
                 : 'https://t4.ftcdn.net/jpg/04/70/29/97/240_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'
             }
             alt={original_title}
-            width='300'
+            width='600'
           />
         </Poster>
         <div>
