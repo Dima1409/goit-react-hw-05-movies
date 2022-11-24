@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getMovieById } from 'api/api';
-import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
-import { Details, Poster, Heading, Description } from './MovieDetails.styled';
+import { Outlet, useParams, useLocation } from 'react-router-dom';
+import { Details, Poster, Heading, Description, ListItem, ListLink } from './MovieDetails.styled';
 import { Container } from 'components/App/App.styled';
 
 const MovieDetails = () => {
@@ -30,7 +30,7 @@ const MovieDetails = () => {
   const backLink = location.state?.from ?? '/movies';
   return (
     <Container>
-      <Link to={backLink}>Back</Link>
+      <ListLink to={backLink}>Back</ListLink>
       <Details>
         <Poster>
           <img
@@ -55,18 +55,18 @@ const MovieDetails = () => {
       </Details>
 
       <div>
-        <h3>Additional information</h3>
+        <Heading>Additional information</Heading>
         <ul>
-          <li>
-            <Link to="cast" state={location.state}>
+          <ListItem>
+            <ListLink to="cast" state={location.state}>
               Cast
-            </Link>
-          </li>
-          <li>
-            <Link to="reviews" state={location.state}>
+            </ListLink>
+          </ListItem>
+          <ListItem>
+            <ListLink to="reviews" state={location.state}>
               Reviews
-            </Link>
-          </li>
+            </ListLink>
+          </ListItem>
         </ul>
       </div>
       <Outlet />

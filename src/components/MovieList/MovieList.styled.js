@@ -4,7 +4,7 @@ const MoviesGallery = styled.ul`
     display: grid;
     max-width: calc(100vw - 48px);
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    grid-gap: 16px;
+    grid-gap: 20px;
     margin-top: 0;
     margin-bottom: 0;
     list-style: none;
@@ -22,7 +22,7 @@ const MovieTitle = styled.h2`
 const MovieItem = styled.li`
 transition: all 0.3s;
     &:hover {
-        transform: scale(1.01);
+        transform: scale(1.005);
     }
 `
 

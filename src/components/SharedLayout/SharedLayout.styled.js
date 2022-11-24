@@ -30,11 +30,9 @@ const Header = styled.header`
     justify-content: start;
     align-items: center;
     min-height: 64px;
-    /* padding-right: 24px;
-    padding-left: 24px; */
     padding-top: 12px;
     padding-bottom: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #fff;
     background-color: #28718d;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),

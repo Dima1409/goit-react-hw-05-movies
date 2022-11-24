@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { searchMovieByValue } from "api/api";
+import { Container } from "components/App/App.styled";
+import { SearchForm, InputForm, BtnSubmit } from "./Form.styled";
 
 const Form = ({setMovies}) => {
     const [searchValue, setSearchValue] = useSearchParams();
@@ -8,6 +10,7 @@ const Form = ({setMovies}) => {
     
     useEffect(()=>{
         if(value === '') {
+            alert('Please enter a value');
             return;
         }
         async function fetchMovies() {
@@ -21,21 +24,20 @@ const Form = ({setMovies}) => {
     const submitForm = e => {
         e.preventDefault();
         const form = e.currentTarget;
-        // const searchValue = form.elements.value.value;
         setSearchValue({value: form.elements.value.value});
         form.reset();
     }
     return (
-        <>
-        <form onSubmit={submitForm}>
-            <input 
+        <Container>
+        <SearchForm onSubmit={submitForm}>
+            <InputForm 
             type="text" 
             name="value"
             placeholder="enter movies name"
              />
-            <button type='submit'>Search</button>
-        </form>
-        </>
+            <BtnSubmit type='submit'>Search</BtnSubmit>
+        </SearchForm>
+        </Container>
     )
 }
 
