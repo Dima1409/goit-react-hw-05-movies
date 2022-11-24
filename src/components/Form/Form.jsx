@@ -10,7 +10,6 @@ const Form = ({setMovies}) => {
     
     useEffect(()=>{
         if(value === '') {
-            alert('Please enter a value');
             return;
         }
         async function fetchMovies() {
