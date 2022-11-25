@@ -2,21 +2,34 @@ import styled  from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const Details = styled.div`
-margin-top: 10px;
 display: flex;
-gap: 20px;
-align-items: center;
+margin-top: 10px;
+flex-direction: column;
+@media screen and (min-width: 768px) {
+   flex-direction: row;
+   gap: 20px; 
+   align-items: center;
+}
 `
 
 const Poster = styled.div`
+width: 300px;
+margin: 0 auto;
+@media screen and (min-width: 768px) {
 width: 400px;
+}
+
 `
 const Image = styled.img`
 width: 100%;
 height: 100%;
 `
 const Wrapper = styled.div`
+width: 100%;
+margin: 0 auto;
+@media screen and (min-width: 768px) {
 width: 60%;
+}
 `
 
 const Heading = styled.h3`

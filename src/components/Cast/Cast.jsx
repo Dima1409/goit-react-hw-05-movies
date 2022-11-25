@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from 'api/api';
-import { ListCast } from './Cast.styled';
+import { ListCast, ListItem, Image } from './Cast.styled';
 import { Container } from 'components/App/App.styled';
 import PropTypes from 'prop-types';
 
@@ -25,8 +25,8 @@ const Cast = () => {
         <ListCast>
           {cast.map(({ profile_path, name, character, cast_id }) => {
             return (
-              <li key={cast_id}>
-                <img
+              <ListItem key={cast_id}>
+                <Image
                   src={
                     profile_path
                       ? `${base_img_url}${profile_path}`
@@ -38,7 +38,7 @@ const Cast = () => {
                 />
                 <h3>{name}</h3>
                 <p>{character}</p>
-              </li>
+              </ListItem>
             );
           })}
         </ListCast>
