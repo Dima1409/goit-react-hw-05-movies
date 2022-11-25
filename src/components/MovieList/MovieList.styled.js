@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const MoviesGallery = styled.ul`
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 768px){
     display: grid;
     max-width: calc(100vw - 48px);
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -10,6 +13,8 @@ const MoviesGallery = styled.ul`
     list-style: none;
     margin-left: auto;
     margin-right: auto;
+    }
+    
 `
 const MoviesImage = styled.img`
     box-shadow: 0 0 5px #000;

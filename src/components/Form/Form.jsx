@@ -1,12 +1,10 @@
 import { Container } from "components/App/App.styled";
 import { SearchForm, InputForm, BtnSubmit } from "./Form.styled";
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 
 const Form = ({ onSubmit }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const btn = useRef();
-  console.log(btn)
 
   const handleChange = e => {
     setSearchQuery(e.target.value.toLowerCase());
@@ -14,14 +12,8 @@ const Form = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
-    if (searchQuery.trim() === '') {
-        btn.current.disabled = true;
-      return
-    }
     onSubmit(searchQuery);
     setSearchQuery('');
-    btn.current.disabled = true;
   };
 
   return (
@@ -34,7 +26,7 @@ const Form = ({ onSubmit }) => {
         onChange={handleChange}
         placeholder="enter movies name"
          />
-        <BtnSubmit type='submit' ref={btn}>Search</BtnSubmit>
+        <BtnSubmit type='submit' disabled={searchQuery.trim()===''}>Search</BtnSubmit>
     </SearchForm>
     </Container>
   )

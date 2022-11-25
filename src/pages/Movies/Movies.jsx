@@ -41,7 +41,7 @@ const Movies = () => {
     <main>
       <Form onSubmit={formSubmit} />
       {movies && <MovieList movies={movies} />}
-      {movies.length === 0 && <Container><h2>No results, try again</h2></Container>}
+      {movies.length > 0 && <Container><h2>No results, try again</h2></Container>}
     </main>
   );
 };

@@ -3,6 +3,7 @@ import { lazy } from 'react';
 import SharedLayout from 'components/SharedLayout';
 import Cast from 'components/Cast';
 import Reviews from 'components/Reviews';
+import ScrollToTop from 'components/Helpers/ScrollToTop';
 
 const Home = lazy(()=> import('pages/Home'));
 const Movies = lazy(()=> import('pages/Movies'));
@@ -11,6 +12,7 @@ const MovieDetails = lazy(()=> import('pages/MovieDetails'));
 export const App = () => {
   return (
     <>
+    <ScrollToTop></ScrollToTop>
     <Routes>
       <Route path='/' element={<SharedLayout/>}>
       <Route index element={<Home/>}/>
