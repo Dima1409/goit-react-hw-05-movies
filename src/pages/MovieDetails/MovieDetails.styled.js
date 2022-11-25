@@ -4,11 +4,19 @@ import { NavLink } from "react-router-dom";
 const Details = styled.div`
 margin-top: 10px;
 display: flex;
+gap: 20px;
 align-items: center;
 `
 
 const Poster = styled.div`
-margin-right: 20px;
+width: 400px;
+`
+const Image = styled.img`
+width: 100%;
+height: 100%;
+`
+const Wrapper = styled.div`
+width: 60%;
 `
 
 const Heading = styled.h3`
@@ -36,4 +44,4 @@ transition: all 0.3s;
 const ListItem = styled.li`
     margin-bottom: 15px;
 `
-export {Details, Poster, Heading, Description, ListItem, ListLink};
+export {Details, Poster, Heading, Description, ListItem, ListLink, Image, Wrapper};

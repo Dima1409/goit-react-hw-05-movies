@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getMovieById } from 'api/api';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
-import { Details, Poster, Heading, Description, ListItem, ListLink } from './MovieDetails.styled';
+import { Details, Poster, Heading, Description, ListItem, ListLink, Image, Wrapper } from './MovieDetails.styled';
 import { Container } from 'components/App/App.styled';
 
 const MovieDetails = () => {
@@ -34,17 +34,16 @@ const MovieDetails = () => {
       <ListLink to={backLink}>Back</ListLink>
       <Details>
         <Poster>
-          <img
+          <Image
             src={
               backdrop_path
                 ? `${base_img_url}${backdrop_path}`
                 : 'https://t4.ftcdn.net/jpg/04/70/29/97/240_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'
             }
             alt={original_title}
-            width='600'
           />
         </Poster>
-        <div>
+        <Wrapper>
           <Heading>
             {original_title} ({release_date.slice(0, 4)})
           </Heading>
@@ -53,7 +52,7 @@ const MovieDetails = () => {
           <Description>{overview}</Description>
           <Heading>Genres</Heading>
           <Description>{genresList.join(', ')}</Description>
-        </div>
+        </Wrapper>
       </Details>
 
       <div>
